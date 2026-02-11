@@ -190,7 +190,7 @@ export function ResumeBuilder() {
                   animate={{ opacity: 1, y: 0 }}
                   exit={{ opacity: 0, y: -10 }}
                 >
-                  <Card className="p-6">
+                  <Card className="p-3 sm:p-6">
                     <FormWizard
                       data={resumeData}
                       onChange={setResumeData}

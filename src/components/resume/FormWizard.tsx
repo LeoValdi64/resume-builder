@@ -96,13 +96,13 @@ export function FormWizard({
     <div className="flex flex-col h-full">
       {/* Step indicators */}
       <div className="mb-6">
-        <div className="flex items-center justify-between mb-3">
+        <div className="flex items-center justify-between mb-3 overflow-x-auto gap-1 sm:gap-0">
           {FORM_STEPS.map((step, index) => (
             <button
               key={step.key}
               onClick={() => onStepChange(step.key)}
               className={cn(
-                "flex items-center justify-center w-8 h-8 rounded-full text-sm font-medium transition-all",
+                "flex items-center justify-center w-8 h-8 min-w-[2rem] rounded-full text-sm font-medium transition-all",
                 index < currentStepIndex
                   ? "bg-primary text-primary-foreground"
                   : index === currentStepIndex
@@ -119,12 +119,12 @@ export function FormWizard({
           ))}
         </div>
         <Progress value={progress} className="h-1" />
-        <div className="flex justify-between mt-2">
+        <div className="flex justify-between mt-2 overflow-x-auto gap-1 sm:gap-0">
           {FORM_STEPS.map((step, index) => (
             <span
               key={step.key}
               className={cn(
-                "text-xs transition-colors",
+                "text-[10px] sm:text-xs transition-colors whitespace-nowrap text-center min-w-0",
                 index === currentStepIndex
                   ? "text-foreground font-medium"
                   : "text-muted-foreground"
